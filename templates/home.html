@@ -172,6 +172,7 @@
                     })
                 },
                 catchPoke: function (item) {
+                    console.log("hello")
                     
                     i = this.pokemons.indexOf(item)
                     cp_list = this.currentUser.caught
@@ -183,7 +184,7 @@
 
                     axios ({
                         method: 'patch',
-                        url: 'api/v1/currentuser/',
+                        url: '/api/v1/currentuser/',
                         headers: {
                             'X-CSRFToken': this.csrf_token
                         },
@@ -202,7 +203,7 @@
 
                     axios ({
                         method: 'patch',
-                        url: 'api/v1/currentuser/',
+                        url: '/api/v1/currentuser/',
                         headers : {
                             'X-CSRFToken': this.csrf_token
                         },
@@ -218,7 +219,7 @@
                 loadCurrentUser: function() {
                     axios({ 
                         method: 'get',
-                        url: 'api/v1/currentuser/'
+                        url: '/api/v1/currentuser/'
                     }).then(response => {
                         this.currentUser = response.data
                     })
@@ -229,7 +230,7 @@
                     console.log(term)
                     axios({
                         method: 'get',
-                        url: 'api/v1/'+term,
+                        url: '/api/v1/'+term,
                         params: {
                             search: this.search_text
                         }
@@ -263,7 +264,7 @@
                 listUsers: function () {
                     axios({
                         method: 'get',
-                        url: 'api/v1/users'
+                        url: '/api/v1/users'
                     }).then(response => {
                         this.users_list = response.data
                     })
@@ -302,7 +303,7 @@
 
                     axios ({
                         method: 'get',
-                        url: 'api/v1/users',
+                        url: '/api/v1/users',
                         params: {
                             search: this.search_text
                         },                        
@@ -324,7 +325,7 @@
                     console.log(cp_list)
                     axios ({
                         method: 'patch',
-                        url: 'api/v1/currentuser/',
+                        url: '/api/v1/currentuser/',
                         headers: {
                             'X-CSRFToken': this.csrf_token
                         },
