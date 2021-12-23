@@ -10,6 +10,7 @@ django = "==3.2"
 djangorestframework = "~=3.11.0"
 django-on-heroku = "*"
 gunicorn = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.10"
